@@ -1,239 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Voltaris Engenharia | Engenharia Elétrica 24h RS e SC</title>
-<meta name="description" content="Voltaris Engenharia - Projetos elétricos, subestações, energia solar e manutenção 24h no RS e SC.">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth;}
-body{background:#050505;color:white;overflow-x:hidden;}
-canvas{position:fixed;top:0;left:0;z-index:-1}
-
-/* NAV */
-nav{
-position:fixed;width:100%;padding:20px 8%;
-display:flex;justify-content:space-between;align-items:center;
-background:rgba(0,0,0,0.6);backdrop-filter:blur(15px);z-index:100;
-}
-.logo{
-font-weight:800;font-size:24px;
-background:linear-gradient(90deg,#00c3ff,#00ff88);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-nav ul{list-style:none;display:flex;gap:30px;}
-nav ul li a{text-decoration:none;color:white;font-weight:500;transition:.3s;}
-nav ul li a:hover{color:#00ff88}
-
-/* HERO */
-.hero{
-height:100vh;display:flex;flex-direction:column;
-justify-content:center;align-items:center;text-align:center;padding:0 20px;
-}
-.hero h1{
-font-size:60px;font-weight:800;
-background:linear-gradient(90deg,#00c3ff,#00ff88);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
-.hero p{margin-top:20px;font-size:20px;color:#ccc}
-.btn{
-margin-top:40px;padding:16px 45px;border:none;border-radius:50px;
-background:linear-gradient(90deg,#00c3ff,#00ff88);
-font-weight:700;cursor:pointer;transition:.3s;
-}
-.btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(0,255,136,0.6)}
-
-/* SECTION */
-section{padding:120px 8%;text-align:center;}
-section h2{font-size:38px;margin-bottom:60px}
-
-/* CARDS */
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
-.card{
-width:300px;padding:35px;border-radius:20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-10px);
-background:rgba(0,255,136,0.1);
-}
-
-/* DIFERENCIAIS */
-.diferenciais{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-.diferencial{
-background:rgba(255,255,255,0.05);
-padding:30px;border-radius:20px;
-}
-
-/* STATS */
-.stats{display:flex;justify-content:center;gap:80px;flex-wrap:wrap}
-.stat h3{font-size:42px;color:#00ff88}
-.stat p{margin-top:10px;color:#ccc}
-
-/* FORM */
-.form-container{
-max-width:600px;margin:auto;
-background:rgba(255,255,255,0.05);
-padding:40px;border-radius:20px;
-backdrop-filter:blur(10px);
-}
-.form-container input,.form-container textarea{
-width:100%;padding:15px;margin-bottom:20px;border:none;border-radius:10px;
-background:rgba(255,255,255,0.1);color:white;
-}
-
-/* FOOTER */
-footer{
-padding:40px;text-align:center;
-background:rgba(0,0,0,0.8);
-font-size:14px;color:#aaa;
-}
-
-/* WHATS */
-.whatsapp{
-position:fixed;bottom:25px;right:25px;
-background:#25D366;width:60px;height:60px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:28px;color:white;text-decoration:none;
-box-shadow:0 0 20px rgba(37,211,102,0.7);
-}
-
-@media(max-width:768px){
-.hero h1{font-size:38px}
-nav ul{display:none}
-}
-</style>
-</head>
-
-<body>
-
-<canvas id="bg"></canvas>
-
-<nav>
-<div class="logo">VOLTARIS ENGENHARIA</div>
-<ul>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-</nav>
-
-<div class="hero">
-<h1>Excelência em Engenharia Elétrica</h1>
-<p>Projetos • Subestações • Energia Solar • Atendimento 24h</p>
-<a href="#contato"><button class="btn">Solicitar Orçamento</button></a>
-</div>
-
-<section id="sobre">
-<h2>Sobre a Voltaris</h2>
-<p style="max-width:800px;margin:auto;color:#ccc;font-size:18px;line-height:1.6;">
-A Voltaris Engenharia é especializada em soluções elétricas de alta performance,
-atuando no RS e SC com excelência técnica, responsabilidade e atendimento emergencial 24 horas.
-</p>
-
-<br><br>
-
-<div class="stats">
-<div class="stat">
-<h3>12+</h3>
-<p>Anos de Experiência</p>
-</div>
-<div class="stat">
-<h3>480+</h3>
-<p>Projetos Executados</p>
-</div>
-<div class="stat">
-<h3>24h</h3>
-<p>Atendimento Emergencial</p>
-</div>
-</div>
+<section id="orcamento">
+    <h2>Automatic Budget Generator</h2>
+    <form id="budgetForm">
+        <label for="service">Service:</label>
+        <input type="text" id="service" name="service"><br>
+        <label for="hours">Hours:</label>
+        <input type="number" id="hours" name="hours"><br>
+        <label for="rate">Rate per Hour:</label>
+        <input type="number" id="rate" name="rate"><br>
+        <input type="button" value="Generate Budget" onclick="gerarOrcamento()">
+    </form>
+    <div id="budgetOutput"></div>
 </section>
-
-<section id="servicos">
-<h2>Serviços Especializados</h2>
-<div class="cards">
-<div class="card"><h3>Projetos Elétricos</h3><p>Residencial, comercial e industrial.</p></div>
-<div class="card"><h3>Subestações</h3><p>Média e alta tensão.</p></div>
-<div class="card"><h3>Energia Solar</h3><p>Projetos fotovoltaicos completos.</p></div>
-<div class="card"><h3>Infraestrutura HVAC</h3><p>Instalação elétrica para climatização.</p></div>
-<div class="card"><h3>Manutenção 24h</h3><p>Atendimento técnico emergencial.</p></div>
-</div>
-</section>
-
-<section>
-<h2>Diferenciais Técnicos</h2>
-<div class="diferenciais">
-<div class="diferencial">✔ ART e CREA ativo</div>
-<div class="diferencial">✔ Projetos conforme NBR 5410</div>
-<div class="diferencial">✔ Adequação NR10</div>
-<div class="diferencial">✔ Padrão RGE / CELESC</div>
-<div class="diferencial">✔ Atendimento empresarial prioritário</div>
-</div>
-</section>
-
-<section id="contato">
-<h2>Solicite um Orçamento</h2>
-<div class="form-container">
-<form action="https://formsubmit.co/fabianorex@email.com" method="POST">
-<input type="text" name="nome" placeholder="Seu Nome" required>
-<input type="email" name="email" placeholder="Seu Email" required>
-<textarea name="mensagem" rows="5" placeholder="Descreva seu projeto" required></textarea>
-<input type="hidden" name="_captcha" value="false">
-<button class="btn">Enviar Solicitação</button>
-</form>
-</div>
-</section>
-
-<footer>
-Voltaris Engenharia LTDA<br>
-CNPJ: 50.999.357/0001-01<br>
-Responsável Técnico: Fabiano<br>
-Atendimento 24h – RS e SC<br>
-© 2026 Todos os direitos reservados
-</footer>
-
-<a href="https://wa.me/5551989691392" class="whatsapp">📱</a>
 
 <script>
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let particles=[];
-class Particle{
-constructor(){
-this.x=Math.random()*canvas.width;
-this.y=Math.random()*canvas.height;
-this.size=Math.random()*2;
-this.speedX=(Math.random()*0.5)-0.25;
-this.speedY=(Math.random()*0.5)-0.25;
-}
-update(){this.x+=this.speedX;this.y+=this.speedY;}
-draw(){
-ctx.fillStyle="rgba(0,255,136,0.4)";
-ctx.beginPath();
-ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-ctx.fill();
-}
-}
-function init(){for(let i=0;i<120;i++)particles.push(new Particle());}
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{p.update();p.draw();});
-requestAnimationFrame(animate);
-}
-init();animate();
-</script>
+function gerarOrcamento() {
+    const service = document.getElementById('service').value;
+    const hours = document.getElementById('hours').value;
+    const rate = document.getElementById('rate').value;
 
-</body>
-</html>
+    if (!service || !hours || !rate) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    const total = hours * rate;
+    document.getElementById('budgetOutput').innerText = `Budget for ${service}: $${total}`;
+}
+</script>
