@@ -31,8 +31,7 @@ exports.handler = async (event) => {
     const buffers = [];
 
     doc.on("data", buffers.push.bind(buffers));
-    doc.on("end", () => {
-    });
+    doc.on("end", () => {});
 
     doc.fontSize(20).text("VOLTARIS ENGENHARIA", { align: "center" });
     doc.moveDown();
